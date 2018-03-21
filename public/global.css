@@ -1,0 +1,62 @@
+#c-path {
+  animation: cmove 2s forwards;
+  transform-origin: 512% 498%;
+}
+ 
+@keyframes cmove {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(1turn);
+    opacity: 1;
+  }
+}
+
+#h-path {
+  animation: hmove 2s forwards;
+  transform-origin: 512% 498%;
+}
+ 
+@keyframes hmove {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(-1turn);
+    opacity: 1;
+  }
+}
+
+#hc-logo {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: hcmove .7s 2s forwards;
+}
+
+@keyframes hcmove {
+  0% {
+    width: 300px;
+    height: 300px;
+    left: 50%;
+  }
+  100% {
+    width: 80px;
+    height: 80px;
+    left: 50px;
+  }
+}
+
+
