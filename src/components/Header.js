@@ -1,9 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
+import styles from "./styles/header.scss"
+import initial from "../beforeReact";
 
-class Header extends Component {
+class Header extends React.Component {
+  constructor(props, context) {
+    super(props, context)
+  }
+
+  componentDidMount() {
+    initial();
+  }
+
   render() {
     return (
-      <div>header</div>
+      <header className={styles.header}>
+        <canvas id="canvasHeader" className={styles.canvas}></canvas>
+      </header>
     );
   }
 }

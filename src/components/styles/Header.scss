@@ -1,0 +1,18 @@
+@import "../../styles/minix.scss";
+
+.header {
+  height: 100%; 
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $background-color;
+  overflow: hidden;
+  z-index: 99;
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

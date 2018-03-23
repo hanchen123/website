@@ -46,10 +46,10 @@
     "webpack-dev-server": "^2.11.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js",
+    "start": "webpack-dev-server --config webpack.config.dev.js",
     "lint": "./node_modules/.bin/eslint ./src",
     "watch": "webpack --watch",
-    "build": "webpack --progress --hide-modules"
+    "build": "webpack --progress --hide-modules webpack.config.prod.js"
   },
   "precommit": "lint",
   "author": "Han Chen",
