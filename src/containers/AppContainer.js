@@ -11,7 +11,7 @@ const history = createHistory();
 
 class AppContainer extends React.Component {
   constructor(props, context) {
-    super(props, context)
+    super(props, context);
   }
 
   render() {

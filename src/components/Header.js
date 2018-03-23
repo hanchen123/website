@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./styles/header.scss"
+import styles from "./styles/header.scss";
 import initial from "../beforeReact";
 
 class Header extends React.Component {
   constructor(props, context) {
-    super(props, context)
+    super(props, context);
   }
 
   componentDidMount() {
