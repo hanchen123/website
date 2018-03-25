@@ -4,6 +4,7 @@ $logo-chen: #01a093;
 $logo-han: #007574;
 $logo-chen-light: #90ffee;
 $logo-han-light: #20ecbe;
+$burger: #b0ffee;
 
 /*-------- responsive --------*/
 $break-point: 768;
@@ -18,4 +19,11 @@ $break-point: 768;
   @media (max-width: #{$break-point}) {
     @content;
   }
+}
+
+@mixin center-both {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, - 50%);
 }

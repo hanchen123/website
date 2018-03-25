@@ -18,13 +18,15 @@ class AppContainer extends React.Component {
   render() {
     const isDev = process.env.NODE_ENV === "development";
 
-    return (
+    return (    
       <div>
-        <Header />
         <ConnectedRouter history={history}>
-          <main className={styles.main}>
-            <Router />
-          </main>
+          <div>
+            <Header />
+            <main className={styles.main}>
+              <Router />
+            </main>
+          </div>
         </ConnectedRouter>
         {isDev && <DevTools />}
       </div>

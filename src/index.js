@@ -6,8 +6,7 @@ import { Provider } from "react-redux";
 import configurStore from "./store/configureStore";
 import AppContainer from "./containers/AppContainer";
 
-const initialState = {};
-const store = configurStore(initialState);
+const store = configurStore({});
 
 render(
   <Provider store={store}>

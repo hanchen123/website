@@ -5,8 +5,7 @@
 
 /* eslint-disable */
 
-export const INCREMENT_NUM = "INCREMENT_NUM";
-export const DECREMENT_NUM = "DECREMENT_NUM";
-export const RESET = "RESET";
+export const TOGGLE_NAV = "TOGGLE_NAV";
+export const ANIMATION_LOADED = "ANIMATION_LOADED";
 
 /* eslint-enable */

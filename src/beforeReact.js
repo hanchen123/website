@@ -1,6 +1,6 @@
 /* global window document requestAnimationFrame jsAnimation */
 
-const init = () => {
+const init = (resolve) => {
   let counter = 0;
 
   window.addEventListener("resize", draw);
@@ -157,7 +157,7 @@ const init = () => {
     const ctx = constant.canvas;
 
     function setGradient(gradient, ctx) {
-      gradient.addColorStop(0, "#0d9d92");
+      gradient.addColorStop(0, "#007574");
       gradient.addColorStop(1, "#54aaaf");
       ctx.fillStyle = gradient;
     }
@@ -251,10 +251,16 @@ const init = () => {
     if (counter < 149) {
       counter++;
       requestAnimationFrame(draw);
+    } else {
+      resolve();
     }
-
   }
+
   draw();
 };
 
-export default init;
+const initAnimate = () => {
+  return new Promise(resolve => {init(resolve);});
+};
+
+export default initAnimate;
