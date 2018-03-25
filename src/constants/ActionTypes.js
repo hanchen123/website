@@ -6,6 +6,6 @@
 /* eslint-disable */
 
 export const TOGGLE_NAV = "TOGGLE_NAV";
-export const ANIMATION_LOADED = "ANIMATION_LOADED";
+export const ANIMATION_LOAD = "ANIMATION_LOAD";
 
 /* eslint-enable */

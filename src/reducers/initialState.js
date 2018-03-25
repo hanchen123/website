@@ -1,3 +1,4 @@
 export default {
-  isOpen: false
+  isOpen: false,
+  isLoad: false
 };

@@ -1,0 +1,59 @@
+@import "../../styles/minix.scss";
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  padding-top: 70px;
+  position: relative;
+  background: rgba(23,169,157,0.9);
+  background: linear-gradient(to bottom, rgba(23,169,157,0.9) 0, rgba(0,95,99,0.9) 100%);
+  z-index: 88;
+
+  @include lg {
+    padding-left: 100px;
+    padding-top: 0;
+  }
+}
+
+.innerWrapper {
+  width: 100%;
+  height: 100%;
+
+  @include lg {
+    padding: 4% 5%;
+  }
+}
+
+.nav {
+  height: 90%;
+
+  ul {
+    height: 90%;
+  }
+
+  li {
+    height: 20%;
+  }
+
+  a {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: $font-light;
+    @include create-font(0, lighter, 76, 36);
+  }
+}
+
+.footer {
+  height: 10%;
+  border-top: 1px solid #01c6ae;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  span {
+    color: $font-light;
+    @include create-font(0, normal, 16, 14);
+  }
+}

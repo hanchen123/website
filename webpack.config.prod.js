@@ -60,6 +60,16 @@ module.exports = {
             name: 'assets/[hash]-[name].[ext]'
           } 
         }]
+      },
+      { 
+        test: /\.woff$/, 
+        use: [{
+          loader: 'url-loader',
+          options: { 
+            limit: 8192,
+            name: 'assets/[name].[ext]'
+          } 
+        }] 
       }
     ]
   },

@@ -4,7 +4,7 @@ $logo-chen: #01a093;
 $logo-han: #007574;
 $logo-chen-light: #90ffee;
 $logo-han-light: #20ecbe;
-$burger: #b0ffee;
+$font-light: #b0ffee;
 
 /*-------- responsive --------*/
 $break-point: 768;
@@ -18,6 +18,38 @@ $break-point: 768;
 @mixin sm {
   @media (max-width: #{$break-point}) {
     @content;
+  }
+}
+
+@mixin respond-between($mq-min, $mq-max) {
+  @media (min-width: $mq-min) and (max-width: $mq-max) {
+    @content;
+  }
+}
+
+@function get-vw($base, $size) {
+  @return ($size/($base/100))*1vw;
+}
+
+@mixin vw($base, $size) {
+  font-size: $size *.8px;
+  font-size: get-vw($base, $size);
+}
+
+@mixin create-font($letter-spacing, $font-weight, $size-lg, $size-sm) {
+  font-size: $size-lg + px;
+  letter-spacing: $letter-spacing + px;
+  font-weight: $font-weight;
+
+  @include respond-between(#{$break-point + 1px}, 1280px) {
+    @include vw(1280, $size-lg);
+  }
+  @include sm {
+    font-size: $size-sm + px;
+  }
+
+  @include respond-between(0px, 480px) {
+    @include vw(480, $size-sm);
   }
 }
 
