@@ -1,5 +1,21 @@
+/*-------- color --------*/
 $background-color: #e4f4f3;
 $logo-chen: #01a093;
 $logo-han: #007574;
 $logo-chen-light: #90ffee;
 $logo-han-light: #20ecbe;
+
+/*-------- responsive --------*/
+$break-point: 768;
+
+@mixin lg {
+  @media (min-width: #{$break-point + 1px}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: #{$break-point}) {
+    @content;
+  }
+}

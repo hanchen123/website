@@ -6,6 +6,7 @@ import createHistory from "history/createBrowserHistory";
 import DevTools from "./DevTools";
 import Router from "../router";
 import Header from "../components/Header";
+import styles from "./AppContainer.scss";
 
 const history = createHistory();
 
@@ -21,7 +22,9 @@ class AppContainer extends React.Component {
       <div>
         <Header />
         <ConnectedRouter history={history}>
-          <Router />
+          <main className={styles.main}>
+            <Router />
+          </main>
         </ConnectedRouter>
         {isDev && <DevTools />}
       </div>

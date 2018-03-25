@@ -1,0 +1,14 @@
+@import "../styles/minix.scss";
+
+.main {
+  height: 100%;
+  width: 100%;
+  background: $background-color;
+  overflow: auto;
+  padding-top: 70px;
+
+  @include lg {
+    padding-top: 0;
+    padding-left: 100px;
+  }
+}
