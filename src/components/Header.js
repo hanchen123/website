@@ -31,6 +31,7 @@ class Header extends React.PureComponent {
     } = this.props;
 
     const burger = classNames(styles.burger, {[styles.burgerOpen]: isOpen});
+    const logoTabIndex = isOpen ? {tabIndex: -1} : {};
 
     return (
       <header className={styles.header}>
@@ -42,7 +43,7 @@ class Header extends React.PureComponent {
             <span></span>
           </div>
         </a>}
-        {isLoad && <Link className={styles.logo} to="/"></Link>}
+        {isLoad && <Link {...logoTabIndex} className={styles.logo} to="/"></Link>}
       </header>
     );
   }

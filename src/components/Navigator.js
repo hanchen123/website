@@ -1,7 +1,10 @@
+
+/* eslint-disable */
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import * as Animated from "animated/lib/targets/react-dom";
 import { toggleNav } from "../actions/navActions";
 import styles from "./styles/Navigator.scss";
 import classNames from "classnames";
@@ -9,19 +12,55 @@ import classNames from "classnames";
 class Navigator extends React.PureComponent {
   constructor(props) {
     super(props);
+    this.renderItems = this.renderItems.bind(this);
+  }
+
+  componentWillMount() {
+    this.renderItems(this.props.items);
+  }
+
+  renderItems(items) {
+    this.setState(
+      {
+        animations: items.map(() => new Animated.Value(0))
+      },
+      () => {
+        Animated.stagger(
+          150,
+          this.state.animations.map(anim =>
+            Animated.spring(anim, { toValue: 1 })
+          )
+        ).start();
+      }
+    );
   }
 
   render() {
     const {
       currentPath,
-      toggleNav
+      toggleNav,
+      items
     } = this.props;
 
-    const items = ["", "portfolio", "about", "contact"];
     const familyOptions = items.map((val, idx) => {
+      const style = {
+        opacity: this.state.animations[idx],
+        transform: Animated.template`
+          translate3d(0, ${this.state.animations[idx].interpolate({
+            inputRange: [0, 1],
+            outputRange: ["30px", "0px"]
+          }
+        )},0)`
+      };
+
       const selected = classNames({[styles.selected]: val === currentPath});
+
       return (
-        <li className={selected} key={idx}><Link to={`/${val}`} onClick={()=>{toggleNav(false);}}>{idx === 0 ? "home" : val}</Link></li>
+        <li className={selected} key={idx}>
+          <Animated.div style={style}>
+            <Link to={`/${val}`} onClick={()=>{toggleNav(false);}}>{idx === 0 ? "home" : val}</Link>
+          </Animated.div>
+        </li>
       );
     });
 
@@ -42,7 +81,8 @@ class Navigator extends React.PureComponent {
 }
 
 const mapStateToProps = state => ({
-  currentPath: state.router.location.pathname.replace(/^\//g, "")
+  currentPath: state.router.location.pathname.replace(/^\//g, ""),
+  items: ["", "portfolio", "about", "contact"]
 });
 
 const mapDispatchToProps = {
@@ -51,6 +91,7 @@ const mapDispatchToProps = {
 
 Navigator.propTypes = {
   currentPath: PropTypes.string,
+  items: PropTypes.array,
   toggleNav: PropTypes.func
 };
 
