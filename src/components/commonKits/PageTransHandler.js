@@ -13,7 +13,7 @@ class PageTransHandler extends React.PureComponent {
       show: false,
       style : {
         opacity: 0,
-        transition: "opacity .5s ease",
+        transition: "opacity .3s ease",
         position: "absolute",
         width: "100%",
         height: "100%",
@@ -36,7 +36,7 @@ class PageTransHandler extends React.PureComponent {
     this.setState({
       style: {
         opacity: 0,
-        transition: "opacity .5s ease",
+        transition: "opacity .3s ease",
         position: "absolute",
         width: "100%",
         height: "100%",

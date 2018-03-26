@@ -1,8 +1,7 @@
 /* global window process */
 
-import _ from "lodash";
 import { createStore, applyMiddleware, compose } from "redux";
-import { routerReducer, routerMiddleware } from "react-router-redux";
+import { routerMiddleware } from "react-router-redux";
 import createHistory from "history/createBrowserHistory";
 import rootReducer from "../reducers";
   
@@ -22,11 +21,11 @@ function configureStoreDev(initialState) {
     )
   );
 
-  return createStore(rootReducer, _.assign({}, routerReducer, initialState), enhancer);
+  return createStore(rootReducer, initialState, enhancer);
 }
 
 function configureStoreProd(initialState) {
-  return createStore(rootReducer, _.assign({}, routerReducer, initialState), applyMiddleware(routerMiddleware(history)));
+  return createStore(rootReducer, initialState, applyMiddleware(routerMiddleware(history)));
 }
 
 const configurStore = process.env.NODE_ENV === "production" ? configureStoreProd : configureStoreDev;

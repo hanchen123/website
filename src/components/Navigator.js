@@ -1,6 +1,10 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { toggleNav } from "../actions/navActions";
 import styles from "./styles/Navigator.scss";
+import classNames from "classnames";
 
 class Navigator extends React.PureComponent {
   constructor(props) {
@@ -8,11 +12,16 @@ class Navigator extends React.PureComponent {
   }
 
   render() {
+    const {
+      currentPath,
+      toggleNav
+    } = this.props;
 
-    const items = ["home", "portfolio", "about", "contact"];
+    const items = ["", "portfolio", "about", "contact"];
     const familyOptions = items.map((val, idx) => {
+      const selected = classNames({[styles.selected]: val === currentPath});
       return (
-        <li key={idx}><Link to={`/${val}`}>{val}</Link></li>
+        <li className={selected} key={idx}><Link to={`/${val}`} onClick={()=>{toggleNav(false);}}>{idx === 0 ? "home" : val}</Link></li>
       );
     });
 
@@ -32,4 +41,20 @@ class Navigator extends React.PureComponent {
   }
 }
 
-export default Navigator;
+const mapStateToProps = state => ({
+  currentPath: state.router.location.pathname.replace(/^\//g, "")
+});
+
+const mapDispatchToProps = {
+  toggleNav
+};
+
+Navigator.propTypes = {
+  currentPath: PropTypes.string,
+  toggleNav: PropTypes.func
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Navigator);
