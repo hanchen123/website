@@ -49,7 +49,7 @@
     height: 100%;
     color: $font-light;
     transition: .25s ease-in-out;
-    @include create-font(0, normal, 76, 48);
+    @include create-font(0, normal, 72, 48);
 
     @include lg {
       justify-content: flex-start;

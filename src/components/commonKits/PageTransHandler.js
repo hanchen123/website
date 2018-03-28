@@ -13,7 +13,7 @@ class PageTransHandler extends React.PureComponent {
       show: false,
       style : {
         opacity: 0,
-        transition: "opacity .3s ease",
+        transition: "opacity .4s ease",
         position: "absolute",
         width: "100%",
         height: "100%",
@@ -36,7 +36,7 @@ class PageTransHandler extends React.PureComponent {
     this.setState({
       style: {
         opacity: 0,
-        transition: "opacity .3s ease",
+        transition: "opacity .4s ease",
         position: "absolute",
         width: "100%",
         height: "100%",
@@ -75,7 +75,7 @@ class PageTransHandler extends React.PureComponent {
   render() {
     return (
       this.state.show && <div style={this.state.style} onTransitionEnd={this.transitionEnd}>
-        {React.cloneElement(this.props.children, {})}
+        {React.cloneElement(this.props.children, {mounted: this.props.mounted})}
       </div>
     );
   }

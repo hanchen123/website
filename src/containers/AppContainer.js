@@ -14,6 +14,18 @@ import styles from "./AppContainer.scss";
 
 const history = createHistory();
 
+const ConnectedHeader = connect(
+  state => ({
+    isOpen: state.global.isOpen
+  })
+)(Header);
+
+const ConnectedPageTransHandler = connect(
+  state => ({
+    mounted: state.global.isOpen
+  })
+)(PageTransHandler);
+
 class AppContainer extends React.PureComponent {
   constructor(props, context) {
     super(props, context);
@@ -21,7 +33,6 @@ class AppContainer extends React.PureComponent {
 
   render() {
     const {
-      isOpen,
       isLoad
     } = this.props;
 
@@ -31,13 +42,13 @@ class AppContainer extends React.PureComponent {
       <div>
         <ConnectedRouter history={history}>
           <div>
-            <Header isOpen={isOpen} isLoad={isLoad} />
+            <ConnectedHeader isLoad={isLoad} />
             <main className={styles.main}>
-              <Router />
+              {isLoad && <Router />}
             </main>
-            <PageTransHandler mounted={isOpen}>
+            <ConnectedPageTransHandler>
               <Navigator />
-            </PageTransHandler>
+            </ConnectedPageTransHandler>
           </div>
         </ConnectedRouter>
         {isDev && <DevTools />}
@@ -47,12 +58,10 @@ class AppContainer extends React.PureComponent {
 }
 
 const mapStateToProps = state => ({
-  isOpen: state.global.isOpen,
   isLoad: state.global.isLoad
 });
 
 AppContainer.propTypes = {
-  isOpen: PropTypes.bool,
   isLoad: PropTypes.bool
 };
 

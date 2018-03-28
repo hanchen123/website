@@ -1,25 +1,86 @@
+/* eslint-disable */
+
 import React from "react";
-import { connect } from "react-redux";
 import { Route, Switch, Redirect } from "react-router";
+import AnimatedWrapper from "../components/commonKits/AnimatedWrapper";
 import Home from "../components/Home/Home";
 import Portfolio from "../components/Portfolio/Portfolio";
+import SubPortfolio from "../components/SubPortfolio/SubPortfolio";
 import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
 import NotFound from "../components/NotFound/NotFound";
 
-const ConnectedSwitch = connect(state => ({
-  location: state.location
-}))(Switch);
+class AnimatedRouter extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      location: props.location,
+      isLeaveing: false
+    };
+  }
+
+  componentWillMount() {
+    this.setState({location: this.props.location});
+  } 
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.history.action !== "POP") {
+      const _this = this;
+
+      _this.setState({isLeaveing: true});
+      setTimeout(() => {
+        _this.setState({location: newProps.location, isLeaveing: false});
+      }, 1000);
+    }
+  }
+
+  render() {
+    const parentProps = {
+      leave: this.state.location,
+      isLeaveing: this.state.isLeaveing,
+      enter: this.props.location,
+    };
+
+    return (
+      <Switch location={this.state.location}>
+        <Route exact path="/" render = {props => (
+          <AnimatedWrapper {...parentProps}>
+            <Home {...props} />
+          </AnimatedWrapper>
+        )} />
+        <Route exact path="/portfolio" render = {props => (
+          <AnimatedWrapper {...parentProps}>
+            <Portfolio {...props} />
+          </AnimatedWrapper>
+        )} />
+        <Route path="/portfolio/:id" render = {props => (
+          <AnimatedWrapper {...parentProps}>
+            <SubPortfolio {...props} />
+          </AnimatedWrapper>
+        )} />
+        <Route path="/about" render = {props => (
+          <AnimatedWrapper {...parentProps}>
+            <About {...props} />
+          </AnimatedWrapper>
+        )} />
+        <Route path="/contact" render = {props => (
+          <AnimatedWrapper {...parentProps}>
+            <Contact {...props} />
+          </AnimatedWrapper>
+        )} />
+        <Route path='/404' render = {props => (
+          <AnimatedWrapper {...parentProps}>
+            <NotFound {...props} />
+          </AnimatedWrapper>
+        )} />
+        <Redirect from='*' to='/404' />
+      </Switch>
+    );
+  }
+}
 
 const Router = () => (
-  <ConnectedSwitch>
-    <Route exact path="/" component={Home} />
-    <Route path="/portfolio" component={Portfolio} />
-    <Route path="/about" component={About} />
-    <Route path="/contact" component={Contact} />
-    <Route path='/404' component={NotFound} />
-    <Redirect from='*' to='/404' />
-  </ConnectedSwitch>
+  <Route component={AnimatedRouter} />
 );
 
 export default Router;

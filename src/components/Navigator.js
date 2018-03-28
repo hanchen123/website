@@ -17,6 +17,17 @@ class Navigator extends React.PureComponent {
     this.renderItems(this.props.items);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (!newProps.mounted) {
+      Animated.stagger(
+        100,
+        this.state.animations.slice(0).reverse().map(anim =>
+          Animated.spring(anim, { toValue: 0 })
+        )
+      ).start();
+    }
+  }
+
   renderItems(items) {
     this.setState(
       {
@@ -46,7 +57,7 @@ class Navigator extends React.PureComponent {
         transform: Animated.template`
           translate3d(0, ${this.state.animations[idx].interpolate({
             inputRange: [0, 1],
-            outputRange: ["30px", "0px"]
+            outputRange: ["25px", "0px"]
           }
         )},0)`
       };
