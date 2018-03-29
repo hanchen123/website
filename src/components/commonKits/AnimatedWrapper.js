@@ -7,7 +7,8 @@ class AnimatedWrapper extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      animate: new Animated.Value(0)
+      animate: new Animated.Value(0),
+      leaving: false
     };
   }
 
@@ -22,8 +23,9 @@ class AnimatedWrapper extends React.PureComponent {
     } = this.props;
 
     if (newProps.isLeaveing) {
-      this.setState({animate: new Animated.Value(0)});
+      this.setState({animate: new Animated.Value(0), leaving: true});
     } else {
+      this.setState({leaving: false});
       Animated.spring(this.state.animate, { toValue: 1 }).start();
     }
   }
@@ -38,7 +40,7 @@ class AnimatedWrapper extends React.PureComponent {
     };
     return (
       <Animated.div className={styles.wrapper} style={style}>
-        {React.cloneElement(this.props.children, {})}
+        {React.cloneElement(this.props.children, {leaving: this.state.leaving})}
       </Animated.div>
     );
   }

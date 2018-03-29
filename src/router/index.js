@@ -1,7 +1,8 @@
-/* eslint-disable */
+/* global setTimeout */
 
 import React from "react";
 import { Route, Switch, Redirect } from "react-router";
+import PropTypes from "prop-types";
 import AnimatedWrapper from "../components/commonKits/AnimatedWrapper";
 import Home from "../components/Home/Home";
 import Portfolio from "../components/Portfolio/Portfolio";
@@ -30,7 +31,7 @@ class AnimatedRouter extends React.PureComponent {
       _this.setState({isLeaveing: true});
       setTimeout(() => {
         _this.setState({location: newProps.location, isLeaveing: false});
-      }, 1000);
+      }, 300);
     }
   }
 
@@ -82,5 +83,9 @@ class AnimatedRouter extends React.PureComponent {
 const Router = () => (
   <Route component={AnimatedRouter} />
 );
+
+AnimatedRouter.propTypes = {
+  location: PropTypes.object
+};
 
 export default Router;
