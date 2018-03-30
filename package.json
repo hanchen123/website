@@ -6,6 +6,7 @@
   "dependencies": {
     "animated": "^0.2.2",
     "classnames": "^2.2.5",
+    "es6-promise": "^4.2.4",
     "history": "^4.7.2",
     "lodash": "^4.17.5",
     "prop-types": "^15.6.1",

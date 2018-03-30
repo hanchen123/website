@@ -1,4 +1,4 @@
-/* global process */
+/* global process navigator */
 
 import React from "react";
 import { ConnectedRouter } from "react-router-redux";
@@ -37,6 +37,7 @@ class AppContainer extends React.PureComponent {
     } = this.props;
 
     const isDev = process.env.NODE_ENV === "development";
+    const isChrome = /Chrome/.test(navigator.userAgent);
 
     return (
       <div>
@@ -51,7 +52,7 @@ class AppContainer extends React.PureComponent {
             </ConnectedPageTransHandler>
           </div>
         </ConnectedRouter>
-        {isDev && <DevTools />}
+        {isDev && isChrome && <DevTools />}
       </div>
     );
   }

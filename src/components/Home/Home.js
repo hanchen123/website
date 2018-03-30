@@ -60,7 +60,7 @@ class Home extends React.Component {
             <h1>HAN CHEN</h1>
           </Animated.div>  
           <Animated.div style={style[1]} ref="slideUp1">
-            <h2 style={style}>SENIOR WEB DEVELOPER</h2>
+            <h2>SENIOR WEB DEVELOPER</h2>
           </Animated.div>  
         </div>
       </div>

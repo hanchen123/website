@@ -1,4 +1,5 @@
 /* eslint-disable */
+require('es6-promise').polyfill();
 
 var pow = Math.pow,
   sqrt = Math.sqrt,
