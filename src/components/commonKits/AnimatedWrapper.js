@@ -1,6 +1,6 @@
-/* eslint-disable */
 import React from "react";
 import * as Animated from "animated/lib/targets/react-dom";
+import PropTypes from "prop-types";
 import styles from "./AnimatedWrapper.scss";
 
 class AnimatedWrapper extends React.PureComponent {
@@ -17,11 +17,6 @@ class AnimatedWrapper extends React.PureComponent {
   }
 
   componentWillReceiveProps(newProps) {
-    const {
-      leave,
-      enter
-    } = this.props;
-
     if (newProps.isLeaveing) {
       this.setState({animate: new Animated.Value(0), leaving: true});
     } else {
@@ -44,6 +39,10 @@ class AnimatedWrapper extends React.PureComponent {
       </Animated.div>
     );
   }
+}
+
+AnimatedWrapper.propTypes = {
+  children: PropTypes.element.isRequired
 };
 
 export default AnimatedWrapper;

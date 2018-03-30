@@ -20,24 +20,47 @@ export function buildAnimation(Animated, anim, config) {
       );
   }
   if (ret.hasOwnProperty("transform")) {
-    ret.transform = Animated.template`
-        translate3d(${config.transform.position === "x" ? anim.interpolate({
-          inputRange: config.range,
-          outputRange: config.transform.translate
-        }
-      ) : 0}, ${config.transform.position === "y" ? anim.interpolate({
-          inputRange: config.range,
-          outputRange: config.transform.translate
-        }
-      ) : 0}, ${config.transform.position === "z" ? anim.interpolate({
-          inputRange: config.range,
-          outputRange: config.transform.translate
-        }
-      ) : 0}) ${ret.hasOwnProperty("scale") ? "scale"(anim.interpolate({
-          inputRange: config.range,
-          outputRange: config.transform.scale
-        }
-      )) : ""}`;
+    ret.transform = [];
+    if (config.transform.hasOwnProperty("translate")) {
+      if (config.transform.position === "x") {
+        ret.transform.push(createTranX(anim, config.range, config.transform.translate));
+      } else if (config.transform.position === "y") {
+        ret.transform.push(createTranY(anim, config.range, config.transform.translate));
+      } else if (config.transform.position === "z") {
+        ret.transform.push(createTranZ(anim, config.range, config.transform.translate));
+      } 
+    }
+    if (config.transform.hasOwnProperty("scale")) {
+      ret.transform.push(createScale(anim, config.range, config.transform.scale));
+    }
   }
   return ret;
 }
+
+const createTranX = (anim, inputRange, outputRange) => ({
+  translateX: anim.interpolate({
+    inputRange: inputRange,
+    outputRange: outputRange,
+  })
+});
+
+const createTranY = (anim, inputRange, outputRange) => ({
+  translateY: anim.interpolate({
+    inputRange: inputRange,
+    outputRange: outputRange,
+  })
+});
+
+const createTranZ = (anim, inputRange, outputRange) => ({
+  translateZ: anim.interpolate({
+    inputRange: inputRange,
+    outputRange: outputRange,
+  })
+});
+
+const createScale = (anim, inputRange, outputRange) => ({
+  scale: anim.interpolate({
+    inputRange: inputRange,
+    outputRange: outputRange,
+  })
+});

@@ -82,27 +82,22 @@ button {
   outline: inherit;
 }
 
-section {
-  height: 100%;
-  width: 100%;
-
-  > div {
-    height: 100%;
-    width: 100%;
-
-    > div {
-      height: 100%;
-      width: 100%;
-    }
-  }
+::selection {
+  color: #e4f4f3;
+  background-color: #005f63;
 }
 
 h1 {
-  @include create-font(0, bold, 50, 44);
+  @include create-font(0, normal, 50, 44);
   color: $logo-chen;
 }
 
 h2 {
-  @include create-font(0, bold, 28, 24);
+  @include create-font(0, normal, 28, 24);
+  color: $font-grey;
+}
+
+h3 {
+  @include create-font(0, normal, 22, 19);
   color: $font-grey;
 }

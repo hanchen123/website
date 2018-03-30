@@ -40,9 +40,9 @@ class AppContainer extends React.PureComponent {
     const isChrome = /Chrome/.test(navigator.userAgent);
 
     return (
-      <div>
+      <div className={styles.wrapper}>
         <ConnectedRouter history={history}>
-          <div>
+          <div className={styles.wrapper}>
             <ConnectedHeader isLoad={isLoad} />
             <main className={styles.main}>
               {isLoad && <Router />}
