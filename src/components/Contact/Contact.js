@@ -58,11 +58,11 @@ class Contact extends React.Component {
     return (
       <section className={styles.wrapper}>
         <div className={styles.innerWrapper}>
-          <Animated.div style={style[0]} ref="slideLeft0">
-            <h1 className={styles.h1}>CONTACT</h1>
+          <Animated.div className={styles.h1} style={style[0]} ref="slideLeft0">
+            <h1>CONTACT</h1>
           </Animated.div>  
-          <Animated.div style={style[1]} ref="slideUp1">
-            <h2 className={styles.h2} dangerouslySetInnerHTML={{__html: contactInfo}}></h2>
+          <Animated.div className={styles.h2} style={style[1]} ref="slideUp1">
+            <h2 dangerouslySetInnerHTML={{__html: contactInfo}}></h2>
           </Animated.div>  
           <Animated.div className={styles.location} style={style[2]} ref="slideUp2">
             <h3 className={styles.h3}>

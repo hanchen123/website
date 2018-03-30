@@ -12,6 +12,10 @@
 .innerWrapper {
   padding: 10% 0;
   overflow: hidden;
+
+  @include lg {
+    padding: 8% 0;
+  }
 }
 
 .h1 {
@@ -23,12 +27,15 @@
 }
 
 .h2 {
-  line-height: 1.2;
   margin: 5% 0 12%;
-  font-style: italic;
 
-  > a {
-    color: $logo-chen;
+  > h2 {
+    line-height: 1.2;
+    font-style: italic;
+
+    > a {
+      color: $logo-chen;
+    }
   }
 }
 
