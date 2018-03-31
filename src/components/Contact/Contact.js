@@ -31,7 +31,7 @@ class Contact extends React.Component {
         Animated.stagger(
           150,
           this.state.animations.map(anim =>
-            Animated.spring(anim.value, { toValue: 0.5, bounciness: 100 })
+            Animated.spring(anim.value, { toValue: 0.5, speed: 150 })
           )
         ).start();
       }

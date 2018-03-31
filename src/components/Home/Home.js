@@ -31,7 +31,7 @@ class Home extends React.Component {
         Animated.stagger(
           150,
           this.state.animations.map(anim =>
-            Animated.spring(anim.value, { toValue: 0.5, bounciness: 100 })
+            Animated.spring(anim.value, { toValue: 0.5, speed: 150 })
           )
         ).start();
       }
@@ -61,7 +61,7 @@ class Home extends React.Component {
             <h1>HAN CHEN</h1>
           </Animated.div>  
           <Animated.div style={style[1]} ref="slideUp1">
-            <h2>SENIOR WEB DEVELOPER</h2>
+            <h2>FULL-STACK WEB DEVELOPER</h2>
           </Animated.div>  
         </div>
       </section>

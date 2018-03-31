@@ -17,8 +17,5 @@ export default [{
 }, {
   type: "fadeIn",
   range: [0, 0.5, 1],
-  opacity: [0, 1, 0],
-  transform: {
-    scale: [1.2, 1, 0.8]
-  }
+  opacity: [0, 1, 0]
 }];
