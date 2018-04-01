@@ -7,6 +7,25 @@ export function splitOrderType(name) {
   };
 }
 
+export function collectKeys(config) {
+  return _.map(config, val => {
+    return _.get(val, "refs");
+  }).reduce((a, b) => {
+    return a.concat(b);
+  });
+}
+
+export function partition(config, n) {
+  return Array.apply(null, Array(n)).map(Number.prototype.valueOf, 0).map((val, idx) => {
+    let ret = [];
+    let start = 0;
+    while(start * n + idx < config.length) {
+      ret.push(config[start++ * n + idx]);
+    }
+    return ret;
+  });
+}
+
 export function buildAnimation(Animated, anim, config) {
   let ret = _.assign({}, config);
   delete ret.type;
@@ -28,6 +47,9 @@ export function buildAnimation(Animated, anim, config) {
         ret.transform.push(createTranY(anim, config.range, config.transform.translate));
       } else if (config.transform.position === "z") {
         ret.transform.push(createTranZ(anim, config.range, config.transform.translate));
+      } else if (config.transform.position === "xy") {
+        ret.transform.push(createTranX(anim, config.range, config.transform.translate.x));
+        ret.transform.push(createTranY(anim, config.range, config.transform.translate.y));
       } 
     }
     if (config.transform.hasOwnProperty("scale")) {

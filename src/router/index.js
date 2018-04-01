@@ -25,15 +25,12 @@ class AnimatedRouter extends React.PureComponent {
   } 
 
   componentWillReceiveProps(newProps) {
-    if (newProps.history.action !== "POP") {
-      const _this = this;
-
-      if (newProps.location.pathname !== this.props.location.pathname) {
-        _this.setState({isLeaveing: true});
-        setTimeout(() => {
-          _this.setState({location: newProps.location, isLeaveing: false});
-        }, 300);
-      }
+    const _this = this;
+    if (newProps.location.pathname !== this.props.location.pathname) {
+      _this.setState({isLeaveing: true});
+      setTimeout(() => {
+        _this.setState({location: newProps.location, isLeaveing: false});
+      }, 300);
     }
   }
 
