@@ -139,6 +139,9 @@
 }
 
 .details {
+  display: inline-block;
+  width: 100%;
+  
   > strong {
     display: block;
     margin: 5% 0 3%;
