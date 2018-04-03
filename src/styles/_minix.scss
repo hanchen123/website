@@ -66,3 +66,9 @@ $break-point: 768;
   top: 50%;
   transform: translate(0, -50%);
 }
+
+@mixin center-horizontal {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}

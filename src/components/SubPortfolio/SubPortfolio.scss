@@ -1,0 +1,142 @@
+@import "../../styles/minix.scss";
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1150px;
+}
+
+.innerWrapper {
+  padding: 10% 0;
+  overflow: hidden;
+
+  @include lg {
+    padding: 8% 0;
+  }
+}
+
+.h1 {
+  line-height: 1.1;
+  margin: 0 0 10%;
+  @include create-font(0, normal, 50, 40);
+
+  @include lg {
+    margin: 0 0 5%;
+  }
+}
+
+.intro {
+  width: 100%;
+  margin-bottom: 18%;
+
+  @include lg {
+    width: 50%;
+    float: left;
+    margin-bottom: 10%;
+  }
+
+  > h2 {
+    font-style: italic;
+    color: #757575;
+    line-height: 1.2;
+    margin-bottom: 5%;
+    @include create-font(0, normal, 24, 26);
+
+    @include lg {
+      margin-bottom: 3%;
+    }
+  }
+
+  > p {
+    line-height: 1.2;
+    @include create-font(0, normal, 18, 18);
+  }
+}
+
+.screen {
+  width: 100%;
+  padding-bottom: 70%;
+  position: relative;
+
+  @include lg {
+    width: 45%;
+    padding-bottom: 35%;
+    float: right;
+  }
+}
+
+.h3 {
+  color: #005f63;
+  margin: 8% 0 3%;
+  @include create-font(0, bold, 24, 26);
+
+  @include lg {
+    margin: 3% 0 1.5%;
+  }
+}
+
+.clear {
+  clear: both;
+
+  p, li {
+    @include create-font(0, normal, 18, 20);
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 8%;
+
+    @include lg {
+      padding-left: 3%;
+    }
+  }
+
+  li {
+    line-height: 1.4;
+    display: list-item;
+  }
+}
+
+.link {
+  margin-top: 12%;
+  cursor: pointer;
+  background: #6fffdf;
+  color: #005f63;
+  display: inline-block;
+  border-radius: 30px;
+  padding: 15px 30px;
+  @include create-font(0, bold, 20, 22);
+
+  @include lg {
+    margin-top: 8%;
+  }
+}
+
+.desktopImg {
+  display: block;
+  position: absolute;
+  width: 95%;
+  top: 0;
+  left: 45%;
+  transform: rotateY(-30deg) rotateX(5deg) translateX(-50%);
+  box-shadow: 1px 0px 0 #fff, 0 0 30px rgba(0,95,99,0.2);
+
+  @include lg {
+    left: 50%;
+  }
+}
+
+.mobileImg {
+  display: block;
+  position: absolute;
+  width: 20%;
+  bottom: 10%;
+  left: 35%;
+  z-index: 2;
+  transform: rotateY(-30deg) rotateX(5deg) translateX(-50%);
+  box-shadow: 1px 0px 0 #fff, 0 0 30px rgba(0,95,99,0.2);
+
+  @include lg {
+    bottom: 20%;
+  }
+}
