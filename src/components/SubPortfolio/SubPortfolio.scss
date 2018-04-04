@@ -16,9 +16,12 @@
 }
 
 .h1 {
-  line-height: 1.1;
   margin: 0 0 10%;
-  @include create-font(0, normal, 50, 40);
+
+  > h1 {
+    line-height: 1.1;
+    @include create-font(0, normal, 50, 40);
+  }
 
   @include lg {
     margin: 0 0 5%;
@@ -27,12 +30,12 @@
 
 .intro {
   width: 100%;
-  margin-bottom: 18%;
+  margin-bottom: 15%;
 
   @include lg {
     width: 50%;
     float: left;
-    margin-bottom: 10%;
+    margin-bottom: 8%;
   }
 
   > h2 {
@@ -57,6 +60,7 @@
   width: 100%;
   padding-bottom: 70%;
   position: relative;
+  perspective: 2000px;
 
   @include lg {
     width: 45%;
@@ -77,6 +81,7 @@
 
 .clear {
   clear: both;
+  overflow: hidden;
 
   p, li {
     @include create-font(0, normal, 18, 20);
@@ -103,7 +108,9 @@
   background: #6fffdf;
   color: #005f63;
   display: inline-block;
-  border-radius: 30px;
+  position: relative;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
   padding: 15px 30px;
   @include create-font(0, bold, 20, 22);
 
@@ -117,12 +124,12 @@
   position: absolute;
   width: 95%;
   top: 0;
-  left: 45%;
+  left: 40%;
   transform: rotateY(-30deg) rotateX(5deg) translateX(-50%);
   box-shadow: 1px 0px 0 #fff, 0 0 30px rgba(0,95,99,0.2);
 
   @include lg {
-    left: 50%;
+    left: 45%;
   }
 }
 
