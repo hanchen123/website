@@ -1,4 +1,5 @@
 /* eslint-disable react/no-string-refs */
+/* global document */
 
 import React from "react";
 import PropTypes from "prop-types";
@@ -19,6 +20,7 @@ class SubPortfolio extends React.PureComponent {
   }
 
   componentDidMount() {
+    document.getElementById("anchor").scrollIntoView();
     this.setState(
       {
         animations: _.sortBy(Object.keys(this.refs).map(ref => {
@@ -67,7 +69,7 @@ class SubPortfolio extends React.PureComponent {
     });
 
     return (
-      <section className={styles.wrapper}>
+      <section className={styles.wrapper} id="anchor">
         <div className={styles.innerWrapper}>
           <Animated.div className={styles.h1} style={style[0]} ref="slideLeft0">
             <h1>{content.headline}</h1>

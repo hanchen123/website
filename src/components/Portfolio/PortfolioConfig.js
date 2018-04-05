@@ -3,6 +3,7 @@ import portfolio1 from "../../assets/portfolio1.jpg";
 import portfolio2 from "../../assets/portfolio2.jpg";
 import portfolio3 from "../../assets/portfolio3.jpg";
 import portfolio4 from "../../assets/portfolio4.jpg";
+import portfolio5 from "../../assets/portfolio5.jpg";
 import logo0 from "../../assets/logo0.png";
 
 export default [{
@@ -36,8 +37,15 @@ export default [{
 }, {
   image: portfolio4,
   logo: logo0,
+  headline: "Samsung All Deals",
+  subHeadline: "Find all the best deals daily for your customers",
+  link: "/portfolio/all-deals",
+  refs: ["slideLeft8", "slideRight9"]
+}, {
+  image: portfolio5,
+  logo: logo0,
   headline: "Samsung US Site",
   subHeadline: "Replatform Samsung.com/us using a modular, template approach based on Adobe CMS",
   link: "/portfolio/samsung-us-site",
-  refs: ["slideLeft8", "slideRight9"]
+  refs: ["slideLeft10", "slideRight11"]
 }];
