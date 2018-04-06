@@ -66,6 +66,6 @@ const init = (num, distance) => {
       requestAnimationFrame(drawRect);
     }
     drawRect();
-}
+};
 
 export default init;
