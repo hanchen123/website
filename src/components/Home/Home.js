@@ -1,5 +1,5 @@
 /* eslint-disable react/no-string-refs */
-/* global document */
+/* global document navigator */
 
 import React from "react";
 import * as Animated from "animated/lib/targets/react-dom";
@@ -20,7 +20,7 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    if (document.getElementById("blackHole")) {
+    if (document.getElementById("blackHole") && /Chrome/.test(navigator.userAgent)) {
       init(2000, 250);
       this.setState({canvasStatus: true});
     }

@@ -63,7 +63,7 @@ const init = (num, distance) => {
         R[i].y = canvas.height / 2 + Math.sin(R[i].angle) * R[i].radius;
         R[i].angle += R[i].angularSpeed;
       }
-      requestAnimationFrame(drawRect);
+      document.getElementById("blackHole") && requestAnimationFrame(drawRect);
     }
     drawRect();
 };
