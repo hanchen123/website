@@ -5,6 +5,7 @@ import * as Animated from "animated/lib/targets/react-dom";
 import _ from "lodash";
 import { splitOrderType, buildAnimation } from "../../utils/Animated";
 import config from "./Animation";
+import init from "../../utils/BlackHole";
 import styles from "./Home.scss";
 
 class Home extends React.Component {
@@ -16,6 +17,7 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
+    init(2000, 250);
     this.setState(
       {
         animations: _.sortBy(Object.keys(this.refs).map(ref => {
@@ -56,6 +58,7 @@ class Home extends React.Component {
 
     return (
       <section className={styles.wrapper}>
+        <canvas id="blackHole" className={styles.canvas}></canvas>
         <div className={styles.content}>
           <Animated.div style={style[0]} ref="slideUp0">
             <h1>HAN CHEN</h1>

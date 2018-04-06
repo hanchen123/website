@@ -16,3 +16,16 @@
     margin-bottom: 8px;
   }
 }
+
+.canvas {
+  position: absolute;
+  display: none;
+  top: 70px;
+  left: 0;
+
+  @include lg {
+    display: block;
+    top: 0;
+    left: 100px;
+  }
+}

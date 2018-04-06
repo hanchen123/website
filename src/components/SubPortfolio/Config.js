@@ -3,11 +3,13 @@ import desktop1 from "../../assets/desktop1.jpg";
 import desktop2 from "../../assets/desktop2.jpg";
 import desktop3 from "../../assets/desktop3.jpg";
 import desktop4 from "../../assets/desktop4.jpg";
+import desktop5 from "../../assets/desktop5.jpg";
 import mobile0 from "../../assets/mobile0.jpg";
 import mobile1 from "../../assets/mobile1.jpg";
 import mobile2 from "../../assets/mobile2.jpg";
 import mobile3 from "../../assets/mobile3.jpg";
 import mobile4 from "../../assets/mobile4.jpg";
+import mobile5 from "../../assets/mobile5.jpg";
 
 export default {
   "galaxy-products-configurator": {
@@ -83,5 +85,24 @@ export default {
     tech: ["ReactJS", "Flux", "ES6", "Sass", "HTML5", "JQuery", "Restful APIs", "Full Responsive"],
     desktop: desktop4,
     mobile: mobile4
+  },
+  "samsung-us-site": {
+    headline: "Samsung US Site",
+    subHeadline: "Replatform Samsung.com/us using a modular, template approach based on Adobe CMS",
+    description: `Samsung are committed to redesigning Samsung.com/us using a modular, template approach. This approach 
+      utilizes a systematic, holistic logic that can be applied to all new templates using a "master list" of reusable 
+      modular components. <br><br>I worked with 3 front-end developers and 5 AEM developers to build this project from 
+      ground up, and delivered it into production with half year. <br><br>This project is built on Adobe CMS, which is called
+      AEM. AEM has 3 different levels: page level, template level and component level. Page level is built by JSP, including 
+      common header, footer, and template. Template level is a XML configuration page connecting page and component, which
+      includes all the component dependences. Component level has back-end business logic and front-end UI, the connector
+      is Sightly, which is a templating engine and language implementation for AEM. For back-end we use Java, and front-end  
+      we use HTML5, SASS, JQuery and KnockoutJS. The whole project building process is handled by Maven, including 
+      front-end gulp task.`,
+    link: "https://www.samsung.com/us/",
+    release: "August 2016",
+    tech: ["KnockoutJS", "JQuery", "Gulp", "HTML5", "Sass", "Sightly", "Java", "JSP", "Full Responsive"],
+    desktop: desktop5,
+    mobile: mobile5
   }
 };
