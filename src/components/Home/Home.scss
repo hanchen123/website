@@ -22,10 +22,16 @@
   display: none;
   top: 70px;
   left: 0;
+  opacity: 0;
+  transition: .3s ease-in-out;
 
   @include lg {
     display: block;
     top: 0;
     left: 100px;
   }
+}
+
+.show {
+  opacity: 1;
 }

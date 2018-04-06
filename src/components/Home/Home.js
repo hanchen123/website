@@ -1,4 +1,5 @@
 /* eslint-disable react/no-string-refs */
+/* global document */
 
 import React from "react";
 import * as Animated from "animated/lib/targets/react-dom";
@@ -6,18 +7,24 @@ import _ from "lodash";
 import { splitOrderType, buildAnimation } from "../../utils/Animated";
 import config from "./Animation";
 import init from "../../utils/BlackHole";
+import classNames from "classnames";
 import styles from "./Home.scss";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      animations: []
+      animations: [],
+      canvasStatus: false
     };
   }
 
   componentDidMount() {
-    init(2000, 250);
+    if (document.getElementById("blackHole")) {
+      init(2000, 250);
+      this.setState({canvasStatus: true});
+    }
+
     this.setState(
       {
         animations: _.sortBy(Object.keys(this.refs).map(ref => {
@@ -42,6 +49,10 @@ class Home extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (newProps.leaving) {
+      if (document.getElementById("blackHole")) {
+        this.setState({canvasStatus: false});
+      }
+
       Animated.stagger(
         100,
         this.state.animations.map(anim =>
@@ -56,9 +67,11 @@ class Home extends React.Component {
       return buildAnimation(Animated, anim.value, _.find(config, {type: anim.type}));
     });
 
+    const canvas = classNames(styles.canvas, {[styles.show]: this.state.canvasStatus});
+
     return (
       <section className={styles.wrapper}>
-        <canvas id="blackHole" className={styles.canvas}></canvas>
+        <canvas id="blackHole" className={canvas}></canvas>
         <div className={styles.content}>
           <Animated.div style={style[0]} ref="slideUp0">
             <h1>HAN CHEN</h1>
