@@ -252,7 +252,6 @@ const init = (resolve) => {
       counter++;
       requestAnimationFrame(draw);
     } else {
-      //document.getElementById("root").style.height= `${sh}px`;
       resolve();
     }
   }

@@ -77,9 +77,8 @@ class Portfolio extends React.PureComponent {
                       <polygon points="350,350 50,350 0,300 0,100 200,0 350,50" />
                     </clipPath>
                   </defs> 
-                  <image clipPath="url(#mask)" filter="url(#blur)" x="0" y="0" 
-                    height="100%" width="100%" xlinkHref={article.image} 
-                    alt="portfolio-image"/>
+                  <image clipPath="url(#mask)" filter="url(#blur)" 
+                    x="0" y="0" height="100%" width="100%" xlinkHref={article.image} alt="portfolio-image"/>
                 </svg>
                 <img className={styles.logo} src={article.logo} alt="portfolio-logo" />
               </figure>
