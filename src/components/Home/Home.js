@@ -20,6 +20,7 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
+    document.documentElement.style.height = "100%";
     if (document.getElementById("blackHole") && /Chrome/.test(navigator.userAgent)) {
       init(2000, 250);
       this.setState({canvasStatus: true});

@@ -44,7 +44,7 @@ class AppContainer extends React.PureComponent {
         <ConnectedRouter history={history}>
           <div className={styles.wrapper}>
             <ConnectedHeader isLoad={isLoad} />
-            <main className={styles.main}>
+            <main className={styles.main} id="mainAnchor">
               {isLoad && <Router />}
             </main>
             <ConnectedPageTransHandler>

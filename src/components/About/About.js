@@ -1,4 +1,5 @@
 /* eslint-disable react/no-string-refs */
+/* global document */
 
 import React from "react";
 import * as Animated from "animated/lib/targets/react-dom";
@@ -17,6 +18,9 @@ class About extends React.PureComponent {
   }
 
   componentDidMount() {
+    document.documentElement.style.height = "auto";
+    document.getElementById("mainAnchor").scrollTop = 0;
+    document.getElementById("mainAnchor").scrollIntoView();
     this.setState(
       {
         animations: _.sortBy(Object.keys(this.refs).map(ref => {

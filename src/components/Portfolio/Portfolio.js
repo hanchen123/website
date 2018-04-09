@@ -1,3 +1,5 @@
+/* global document */
+
 import React from "react";
 import { Link } from "react-router-dom";
 import * as Animated from "animated/lib/targets/react-dom";
@@ -31,6 +33,9 @@ class Portfolio extends React.PureComponent {
   }
 
   componentDidMount() {
+    document.documentElement.style.height = "auto";
+    document.getElementById("mainAnchor").scrollTop = 0;
+    document.getElementById("mainAnchor").scrollIntoView();
     partition(this.state.animations, 2).map(anims => {
       Animated.stagger(
         400,
@@ -63,18 +68,17 @@ class Portfolio extends React.PureComponent {
           <Animated.div style={style[idx * 2]}>
             <Link to={article.link} tabIndex={-1}>
               <figure>
-                <svg viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg" perpetual-motion="0">
                   <defs>
                     <filter id="blur">
                       <feGaussianBlur stdDeviation="3" />
                     </filter>
-                  </defs>
-                  <defs>
                     <clipPath id="mask">
                       <polygon points="350,350 50,350 0,300 0,100 200,0 350,50" />
                     </clipPath>
                   </defs> 
-                  <image clipPath="url(#mask)" filter="url(#blur)" height="100%" width="100%" href={article.image} 
+                  <image clipPath="url(#mask)" filter="url(#blur)" x="0" y="0" 
+                    height="100%" width="100%" xlinkHref={article.image} 
                     alt="portfolio-image"/>
                 </svg>
                 <img className={styles.logo} src={article.logo} alt="portfolio-logo" />

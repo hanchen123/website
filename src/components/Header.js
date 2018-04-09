@@ -27,7 +27,8 @@ class Header extends React.PureComponent {
   render() {
     const {
       isOpen,
-      isLoad
+      isLoad,
+      toggleNav
     } = this.props;
 
     const burger = classNames(styles.burger, {[styles.burgerOpen]: isOpen});
@@ -43,7 +44,7 @@ class Header extends React.PureComponent {
             <span></span>
           </div>
         </a>}
-        {isLoad && <Link {...logoTabIndex} className={styles.logo} to="/"></Link>}
+        {isLoad && <Link {...logoTabIndex} className={styles.logo} to="/" onClick={()=>{toggleNav(false);}}></Link>}
       </header>
     );
   }
@@ -56,7 +57,8 @@ const mapDispatchToProps = {
 
 Header.propTypes = {
   isOpen: PropTypes.bool,
-  isLoad: PropTypes.bool
+  isLoad: PropTypes.bool,
+  toggleNav: PropTypes.func
 };
 
 export default connect(

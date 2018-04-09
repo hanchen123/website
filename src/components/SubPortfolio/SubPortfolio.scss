@@ -20,7 +20,7 @@
 
   > h1 {
     line-height: 1.1;
-    @include create-font(0, normal, 50, 40);
+    @include create-font(0, normal, 50, 42);
   }
 
   @include lg {

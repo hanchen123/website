@@ -20,7 +20,9 @@ class SubPortfolio extends React.PureComponent {
   }
 
   componentDidMount() {
-    document.getElementById("anchor").scrollIntoView();
+    document.documentElement.style.height = "auto";
+    document.getElementById("mainAnchor").scrollTop = 0;
+    document.getElementById("mainAnchor").scrollIntoView();
     this.setState(
       {
         animations: _.sortBy(Object.keys(this.refs).map(ref => {
@@ -69,7 +71,7 @@ class SubPortfolio extends React.PureComponent {
     });
 
     return (
-      <section className={styles.wrapper} id="anchor">
+      <section className={styles.wrapper}>
         <div className={styles.innerWrapper}>
           <Animated.div className={styles.h1} style={style[0]} ref="slideLeft0">
             <h1>{content.headline}</h1>

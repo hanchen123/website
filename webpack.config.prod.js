@@ -7,7 +7,7 @@ module.exports = {
   entry: ['./src/polyfill', './src/index.js', './src/styles/main.scss'],
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, './public/dist')
+    path: path.resolve(__dirname, './public')
   },
   devtool: 'source-map',
   module: {

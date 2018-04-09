@@ -2,6 +2,7 @@
 
 const init = (resolve) => {
   let counter = 0;
+  const ctx = document.getElementById("canvasHeader").getContext("2d");
 
   window.addEventListener("resize", draw);
 
@@ -231,7 +232,6 @@ const init = (resolve) => {
     const sw = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     const sh = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     const clientSize = sw < 769 ? "sm" : "lg";
-    const ctx = document.getElementById("canvasHeader").getContext("2d");
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
     setCanvas({canvas: ctx, clientSize: clientSize}, {one: 50, two: 100, three: 150}, counter,
@@ -252,6 +252,7 @@ const init = (resolve) => {
       counter++;
       requestAnimationFrame(draw);
     } else {
+      //document.getElementById("root").style.height= `${sh}px`;
       resolve();
     }
   }

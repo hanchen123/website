@@ -34,6 +34,13 @@
 
   li {
     height: 20%;
+    display: flex;
+    align-items: center;
+
+    > div {
+      flex-shrink: 0;
+      width: 100%;
+    }
   }
 
   a {
@@ -45,7 +52,7 @@
     height: 100%;
     color: $font-light;
     transition: .25s ease-in-out;
-    @include create-font(0, normal, 72, 48);
+    @include create-font(0, normal, 72, 50);
 
     @include lg {
       justify-content: flex-start;
@@ -109,6 +116,6 @@
   span {
     color: $font-light;
     line-height: 1.5;
-    @include create-font(0, normal, 16, 14);
+    @include create-font(0, normal, 16, 16);
   }
 }

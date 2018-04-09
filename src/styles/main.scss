@@ -32,15 +32,18 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+html {
+  width: 100%;
+}
+
 body {
   line-height: 1;
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   text-rendering: optimizeLegibility;
   background: $background-color;
   font-size: 16px;
   font-family: "Hans", Helvetica, Arial, sans-serif;
-  overflow: hidden;
 }
 
 ol, ul {
@@ -98,6 +101,6 @@ h2 {
 }
 
 h3 {
-  @include create-font(0, normal, 22, 19);
+  @include create-font(0, normal, 22, 20);
   color: $font-grey;
 }
