@@ -1,7 +1,17 @@
+/* global document */
+
 import React from "react";
 import styles from "./NotFound.scss";
 
 class NotFound extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    document.documentElement.style.height = "100%";
+  }
+
   render() {
     return (
       <section className={styles.wrapper}>
