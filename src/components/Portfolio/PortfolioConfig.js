@@ -4,7 +4,9 @@ import portfolio2 from "../../assets/portfolio2.jpg";
 import portfolio3 from "../../assets/portfolio3.jpg";
 import portfolio4 from "../../assets/portfolio4.jpg";
 import portfolio5 from "../../assets/portfolio5.jpg";
+import portfolio6 from "../../assets/portfolio6.jpg"; 
 import logo0 from "../../assets/logo0.png";
+import logo1 from "../../assets/logo1.png";
 
 export default [{
   image: portfolio0,
@@ -48,4 +50,11 @@ export default [{
   subHeadline: "Replatform Samsung.com/us using a modular, template approach based on Adobe CMS",
   link: "/portfolio/samsung-us-site",
   refs: ["slideLeft10", "slideRight11"]
+}, {
+  image: portfolio6,
+  logo: logo1,
+  headline: "ROAR",
+  subHeadline: "Explore AR experiences and create your own augmented reality",
+  link: "/portfolio/roar",
+  refs: ["slideLeft12", "slideRight13"]
 }];

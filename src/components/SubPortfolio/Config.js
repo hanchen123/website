@@ -4,12 +4,14 @@ import desktop2 from "../../assets/desktop2.jpg";
 import desktop3 from "../../assets/desktop3.jpg";
 import desktop4 from "../../assets/desktop4.jpg";
 import desktop5 from "../../assets/desktop5.jpg";
+import desktop6 from "../../assets/desktop6.jpg";
 import mobile0 from "../../assets/mobile0.jpg";
 import mobile1 from "../../assets/mobile1.jpg";
 import mobile2 from "../../assets/mobile2.jpg";
 import mobile3 from "../../assets/mobile3.jpg";
 import mobile4 from "../../assets/mobile4.jpg";
 import mobile5 from "../../assets/mobile5.jpg";
+import mobile6 from "../../assets/mobile6.jpg";
 
 export default {
   "galaxy-products-configurator": {
@@ -22,6 +24,7 @@ export default {
       history API so each step can be cached and deeplinked in browser. It's full responsive and well tagged for marketing 
       purpose. All the data is retrieved by RESTful API.`,
     link: "https://www.samsung.com/us/smartphones/galaxy-s9/buy/",
+    linkText: "SEE IT LIVE",
     release: "February 2018",
     tech: ["ReactJS", "Redux", "ES6", "Sass", "HTML5", "Webpack", "Restful APIs", "Full Responsive"],
     desktop: desktop0,
@@ -37,6 +40,7 @@ export default {
       history API so each step can be cached and deeplinked in browser. It's full responsive and well tagged for marketing 
       purpose. All the data is retrieved by RESTful API.`,
     link: "https://www.samsung.com/us/televisions-home-theater/tvs/buy/",
+    linkText: "SEE IT LIVE",
     release: "November 2017",
     tech: ["ReactJS", "Redux", "ES6", "Sass", "HTML5", "Webpack", "Restful APIs", "Full Responsive"],
     desktop: desktop1,
@@ -52,6 +56,7 @@ export default {
       history API so each step can be cached and deeplinked in browser. It's full responsive and well tagged for marketing 
       purpose. All the data is retrieved by RESTful API, and also call Ajax to check zip codes and installation availability.`,
     link: "https://www.samsung.com/us/home-appliances/refrigerators/",
+    linkText: "SEE IT LIVE",
     release: "August 2017",
     tech: ["ReactJS", "Redux", "ES6", "Sass", "HTML5", "Webpack", "Restful APIs", "Full Responsive"],
     desktop: desktop2,
@@ -67,6 +72,7 @@ export default {
       and each filter result handled by history API so it will be cached in browser without duplicate hits to server to get same data. 
       It's full responsive and all the data is retrieved by RESTful API.`,
     link: "https://www.samsung.com/us/mobile/phones/all-phones/",
+    linkText: "SEE IT LIVE",
     release: "March 2017",
     tech: ["ReactJS", "Redux", "ES6", "JSS", "HTML5", "Webpack", "Restful APIs", "Full Responsive"],
     desktop: desktop3,
@@ -81,6 +87,7 @@ export default {
       <br><br>This project is built on React/Flux in combination with Sass, and the category filter is built by JQuery.
       It's full responsive and all the data is retrieved by RESTful API.`,
     link: "https://www.samsung.com/us/shop/all-deals/",
+    linkText: "SEE IT LIVE",
     release: "November 2016",
     tech: ["ReactJS", "Flux", "ES6", "Sass", "HTML5", "JQuery", "Restful APIs", "Full Responsive"],
     desktop: desktop4,
@@ -100,9 +107,25 @@ export default {
       we use HTML5, SASS, JQuery and KnockoutJS. The whole project building process is handled by Maven, including 
       front-end gulp task.`,
     link: "https://www.samsung.com/us/",
+    linkText: "SEE IT LIVE",
     release: "August 2016",
     tech: ["KnockoutJS", "JQuery", "Gulp", "HTML5", "Sass", "Sightly", "Java", "JSP", "Full Responsive"],
     desktop: desktop5,
     mobile: mobile5
+  },
+  "roar": {
+    headline: "ROAR",
+    subHeadline: "Explore AR experiences and create your own augmented reality",
+    description: `ROAR self-service platform allows to build AR experiences in a few clicks. 
+      It's designed for CPG brands, Retailers, Agencies as well as for ordinary users. This is a landing page for AR Platform.
+      <br><br>I built this landing page by myself from ground up, and delivered it into production 
+      within 3 weeks. <br><br>This project is built on AngularJS in combination with Jade and Stylus.
+      It's full responsive and video animated.`, 
+    link: "/demo/roar/",
+    linkText: "SEE IT DEMO",
+    release: "September 2015",
+    tech: ["AngularJS", "Google Maps API", "Grunt", "Jade", "Stylus", "Full Responsive"],
+    desktop: desktop6,
+    mobile: mobile6
   }
 };

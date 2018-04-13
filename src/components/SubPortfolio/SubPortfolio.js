@@ -79,7 +79,7 @@ class SubPortfolio extends React.PureComponent {
           <Animated.div className={styles.intro} style={style[1]} ref="slideUp1">
             <h2>{content.subHeadline}</h2>
             <p dangerouslySetInnerHTML={{__html: content.description}}></p>
-            <a className={styles.link} href={content.link} target="_blank" rel="noopener noreferrer">SEE IT LIVE</a>
+            <a className={styles.link} href={content.link} target="_blank" rel="noopener noreferrer">{content.linkText}</a>
           </Animated.div>
           <Animated.div className={styles.screen} style={style[2]} ref="popUp2">
             <img className={styles.desktopImg} src={`/${content.desktop}`} alt="desktop-view" />
