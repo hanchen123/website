@@ -1,1 +1,2 @@
-personal website: hanchenhome.com
+Personal website: hanchenhome.com
+React + Redux + Sass
