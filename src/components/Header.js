@@ -1,3 +1,5 @@
+/* global document */
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -21,6 +23,17 @@ class Header extends React.PureComponent {
 
   toggleBurger() {
     const _this = this.props;
+    if (_this.isOpen) {
+      const elems = document.querySelectorAll("main a, main button, main input");
+      for (let i = 0; i < elems.length; i++) {
+        elems[i].removeAttribute("tabIndex");
+      }    
+    } else {
+      const elems = document.querySelectorAll("main a, main button, main input");
+      for (let i = 0; i < elems.length; i++) {
+        elems[i].tabIndex = -1;
+      }    
+    }
     _this.toggleNav(!_this.isOpen);
   }
 
