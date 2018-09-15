@@ -27,8 +27,8 @@ export default {
     linkText: "SEE IT LIVE",
     release: "February 2018",
     tech: ["ReactJS", "Redux", "ES6", "Sass", "HTML5", "Webpack", "Restful APIs", "Full Responsive"],
-    desktop: desktop0,
-    mobile: mobile0
+    desktop: desktop6,
+    mobile: mobile6
   },
   "tvs-configurator": {
     headline: "Samsung TVs",
@@ -43,8 +43,8 @@ export default {
     linkText: "SEE IT LIVE",
     release: "November 2017",
     tech: ["ReactJS", "Redux", "ES6", "Sass", "HTML5", "Webpack", "Restful APIs", "Full Responsive"],
-    desktop: desktop1,
-    mobile: mobile1
+    desktop: desktop5,
+    mobile: mobile5
   },
   "home-appliances-configurator": {
     headline: "Samsung Home Appliances",
@@ -59,8 +59,8 @@ export default {
     linkText: "SEE IT LIVE",
     release: "August 2017",
     tech: ["ReactJS", "Redux", "ES6", "Sass", "HTML5", "Webpack", "Restful APIs", "Full Responsive"],
-    desktop: desktop2,
-    mobile: mobile2
+    desktop: desktop4,
+    mobile: mobile4
   },
   "product-finder": {
     headline: "Samsung Product Finder",
@@ -90,8 +90,8 @@ export default {
     linkText: "SEE IT LIVE",
     release: "November 2016",
     tech: ["ReactJS", "Flux", "ES6", "Sass", "HTML5", "JQuery", "Restful APIs", "Full Responsive"],
-    desktop: desktop4,
-    mobile: mobile4
+    desktop: desktop2,
+    mobile: mobile2
   },
   "samsung-us-site": {
     headline: "Samsung US Site",
@@ -110,8 +110,8 @@ export default {
     linkText: "SEE IT LIVE",
     release: "August 2016",
     tech: ["KnockoutJS", "JQuery", "Gulp", "HTML5", "Sass", "Sightly", "Java", "JSP", "Full Responsive"],
-    desktop: desktop5,
-    mobile: mobile5
+    desktop: desktop1,
+    mobile: mobile1
   },
   "roar": {
     headline: "ROAR",
@@ -125,7 +125,7 @@ export default {
     linkText: "SEE IT DEMO",
     release: "September 2015",
     tech: ["AngularJS", "Google Maps API", "Grunt", "Jade", "Stylus", "Full Responsive"],
-    desktop: desktop6,
-    mobile: mobile6
+    desktop: desktop0,
+    mobile: mobile0
   }
 };
