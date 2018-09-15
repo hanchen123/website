@@ -4,11 +4,27 @@ import portfolio2 from "../../assets/portfolio2.jpg";
 import portfolio3 from "../../assets/portfolio3.jpg";
 import portfolio4 from "../../assets/portfolio4.jpg";
 import portfolio5 from "../../assets/portfolio5.jpg";
-import portfolio6 from "../../assets/portfolio6.jpg"; 
+import portfolio6 from "../../assets/portfolio6.jpg";
+import portfolio7 from "../../assets/portfolio7.jpg";
+import portfolio8 from "../../assets/portfolio8.jpg";
 import logo0 from "../../assets/logo0.png";
 import logo1 from "../../assets/logo1.png";
 
 export default [{
+  image: portfolio8,
+  logo: logo1,
+  headline: "Samsung Wearables",
+  subHeadline: "Custom configurator for purchase your Samsung Wearables",
+  link: "/portfolio/wearables-configurator",
+  refs: ["slideRight17", "slideLeft16"]
+}, {
+  image: portfolio7,
+  logo: logo1,
+  headline: "Samsung Tablets",
+  subHeadline: "Custom configurator for purchase your Samsung Tablets",
+  link: "/portfolio/tablets-configurator",
+  refs: ["slideRight15", "slideLeft14"]
+}, {
   image: portfolio6,
   logo: logo1,
   headline: "Samsung Galaxy Products",

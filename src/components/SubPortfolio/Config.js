@@ -5,6 +5,8 @@ import desktop3 from "../../assets/desktop3.jpg";
 import desktop4 from "../../assets/desktop4.jpg";
 import desktop5 from "../../assets/desktop5.jpg";
 import desktop6 from "../../assets/desktop6.jpg";
+import desktop7 from "../../assets/desktop7.jpg";
+import desktop8 from "../../assets/desktop8.jpg";
 import mobile0 from "../../assets/mobile0.jpg";
 import mobile1 from "../../assets/mobile1.jpg";
 import mobile2 from "../../assets/mobile2.jpg";
@@ -12,15 +14,49 @@ import mobile3 from "../../assets/mobile3.jpg";
 import mobile4 from "../../assets/mobile4.jpg";
 import mobile5 from "../../assets/mobile5.jpg";
 import mobile6 from "../../assets/mobile6.jpg";
+import mobile7 from "../../assets/mobile7.jpg";
+import mobile8 from "../../assets/mobile8.jpg";
 
 export default {
+  "wearables-configurator": {
+    headline: "Samsung Wearables",
+    subHeadline: "Custom configurator for purchase your Samsung Wearables",
+    description: `The Samsung Wearables configurator is an interactive page where the users will finish their purchase of  
+      Samsung Wearables based on their selections of several steps. It's currently used for Gear series and Galaxy Watch purchase.
+      <br><br>I build this project from ground up, and delivered it into production within 2 weeks on my own.
+      <br><br>This project is built on React/Redux in combination with Sass, and page routing is handled by 
+      history API so each step can be cached and deeplinked in browser. It's full responsive and well tagged for marketing 
+      purpose. All the data is retrieved by RESTful API.`,
+    link: "https://www.samsung.com/us/smartwatches-and-fitness-bands/buy/",
+    linkText: "SEE IT LIVE",
+    release: "June 2018",
+    tech: ["ReactJS", "Redux", "ES6", "Sass", "HTML5", "Webpack", "Restful APIs", "Full Responsive"],
+    desktop: desktop8,
+    mobile: mobile8
+  },
+  "tablets-configurator": {
+    headline: "Samsung Tablets",
+    subHeadline: "Custom configurator for purchase your Samsung Tablets",
+    description: `The Samsung Tablets configurator is an interactive page where the users will finish their purchase of  
+      Samsung Tablets based on their selections of several steps. It's currently used for Tab S3/S4 and Galaxy Book purchase.
+      <br><br>I build this project from ground up, and delivered it into production within 2 weeks on my own.
+      <br><br>This project is built on React/Redux in combination with Sass, and page routing is handled by 
+      history API so each step can be cached and deeplinked in browser. It's full responsive and well tagged for marketing 
+      purpose. All the data is retrieved by RESTful API.`,
+    link: "https://www.samsung.com/us/mobile/tablets/buy/",
+    linkText: "SEE IT LIVE",
+    release: "June 2018",
+    tech: ["ReactJS", "Redux", "ES6", "Sass", "HTML5", "Webpack", "Restful APIs", "Full Responsive"],
+    desktop: desktop7,
+    mobile: mobile7
+  },
   "galaxy-products-configurator": {
     headline: "Samsung Galaxy Products",
     subHeadline: "Custom configurator for purchase your Samsung Galaxy Products",
-    description: `The galaxy products configurator is an interactive page where the user will finish their purchase of  
-      galaxy products based on his selections of several steps. It's currently used for galaxy s8/s9/note8 purchase.
+    description: `The Galaxy Products configurator is an interactive page where the users will finish their purchase of  
+      Galaxy Products based on their selections of several steps. It's currently used for galaxy s8/s9/note8/note9 purchase.
       <br><br>I lead a front-end group of 3 developers to build this project from ground up, and delivered it into production 
-      within 3 weeks.<br><br>This project is built on React/Redux in combination with Sass, and page transition is handled by 
+      within 3 weeks.<br><br>This project is built on React/Redux in combination with Sass, and page routing is handled by 
       history API so each step can be cached and deeplinked in browser. It's full responsive and well tagged for marketing 
       purpose. All the data is retrieved by RESTful API.`,
     link: "https://www.samsung.com/us/smartphones/galaxy-s9/buy/",
@@ -33,10 +69,10 @@ export default {
   "tvs-configurator": {
     headline: "Samsung TVs",
     subHeadline: "Custom configurator for purchase your Samsung TVs",
-    description: `The Samsung TVs configurator is an interactive page where the user will finish their purchase of  
-      Samsung TVs based on his selections of several steps. It's currently used for Samsung QLED/UHD TV purchase.
+    description: `The Samsung TVs configurator is an interactive page where the users will finish their purchase of  
+      Samsung TVs based on their selections of several steps. It's currently used for Samsung QLED/UHD TV purchase.
       <br><br>I lead another front-end developer to build this project from ground up, and delivered it into production 
-      within 1 month.<br><br>This project is built on React/Redux in combination with Sass, and page transition is handled by 
+      within 1 month.<br><br>This project is built on React/Redux in combination with Sass, and page routing is handled by 
       history API so each step can be cached and deeplinked in browser. It's full responsive and well tagged for marketing 
       purpose. All the data is retrieved by RESTful API.`,
     link: "https://www.samsung.com/us/televisions-home-theater/tvs/buy/",
@@ -49,12 +85,12 @@ export default {
   "home-appliances-configurator": {
     headline: "Samsung Home Appliances",
     subHeadline: "Custom configurator for purchase your Home Appliances",
-    description: `The Samsung TVs configurator is an interactive page where the user will finish their purchase of  
-      Samsung Home Appliances based on his selections of several steps. It's currently used for refrigerator/range/washer/dryer/microwave/dishwasher purchase.
+    description: `The Samsung TVs configurator is an interactive page where the users will finish their purchase of  
+      Samsung Home Appliances based on their selections of several steps. It's currently used for refrigerator/range/washer/dryer/microwave/dishwasher purchase.
       <br><br>I lead another front-end developer to build this project from ground up, and delivered it into production 
-      within 2 months.<br><br>This project is built on React/Redux in combination with Sass, and page transition is handled by 
+      within 2 months.<br><br>This project is built on React/Redux in combination with Sass, and page routing is handled by 
       history API so each step can be cached and deeplinked in browser. It's full responsive and well tagged for marketing 
-      purpose. All the data is retrieved by RESTful API, and also call Ajax to check zip codes and installation availability.`,
+      purpose. All the data is retrieved by RESTful API, including zip code and installation availability.`,
     link: "https://www.samsung.com/us/home-appliances/refrigerators/",
     linkText: "SEE IT LIVE",
     release: "August 2017",
@@ -65,7 +101,7 @@ export default {
   "product-finder": {
     headline: "Samsung Product Finder",
     subHeadline: "Product Finder guides your customers to the right products",
-    description: `The Samsung Product Finder is a product category page where the user can easily find right products by  
+    description: `The Samsung Product Finder is a product category page where the users can easily find right products by  
       filtering them through model, color, size, price or rating. It's currently used for all Samsung product category such as
       mobiles, TVs and home appliances.<br><br>I worked with another front-end developer to build this project from ground up, 
       and delivered it into production within 2 months.<br><br>This project is built on React/Redux in combination with JSS, 
@@ -81,7 +117,7 @@ export default {
   "all-deals": {
     headline: "Samsung All Deals",
     subHeadline: "Find all the best deals daily for your customers",
-    description: `The Samsung All Deals is a product category page where the user can easily find the best deals of products. 
+    description: `The Samsung All Deals is a product category page where the users can easily find the best deals of products. 
       It's currently used for all Samsung products daily deals, especially for 2016 and 2017 Black Friday. <br><br>I worked 
       with another 2 front-end developers to build this project from ground up, and delivered it into production within 5 weeks.
       <br><br>This project is built on React/Flux in combination with Sass, and the category filter is built by JQuery.
