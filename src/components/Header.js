@@ -26,11 +26,13 @@ class Header extends React.PureComponent {
     if (_this.isOpen) {
       const elems = document.querySelectorAll("main a, main button, main input");
       for (let i = 0; i < elems.length; i++) {
-        elems[i].removeAttribute("tabIndex");
+        if (elems[i].dataset && elems[i].dataset.tabIndex) elems[i].tabIndex = elems[i].dataset.tabIndex;
+        else elems[i].removeAttribute("tabIndex");
       }    
     } else {
       const elems = document.querySelectorAll("main a, main button, main input");
       for (let i = 0; i < elems.length; i++) {
+        if (elems[i].hasAttribute("tabIndex")) elems[i].dataset.tabIndex = elems[i].tabIndex;
         elems[i].tabIndex = -1;
       }    
     }
