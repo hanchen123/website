@@ -1,10 +1,12 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractBundle = new ExtractTextPlugin('bundle.css');
+const ExtractFallback = new ExtractTextPlugin('fallback.css');
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: ['./src/polyfill', './src/index.js', './src/styles/main.scss'],
+  entry: ['./src/polyfill', './src/index.js', './src/styles/main.scss', './fallback/fallback.scss'],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, './public')
@@ -14,7 +16,35 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
+        include: path.resolve(__dirname, './fallback'),
+        use: ExtractFallback.extract({
+          fallback: 'style-loader',
+          use: [{
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              modules: true,
+              localIdentName: '[local]'
+            }
+          }, {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              ident: 'postcss',
+              plugins: () => [autoprefixer({ browsers: ['last 2 versions', '> 1%'] })]
+            }
+          }, {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }]
+        })
+      }, 
+      {
+        test: /\.scss$/,
+        include: path.resolve(__dirname, './src'),
+        use: ExtractBundle.extract({
           fallback: 'style-loader',
           use: [{
             loader: 'css-loader',
@@ -77,7 +107,8 @@ module.exports = {
     contentBase: './public/'
   },
   plugins: [
-    new ExtractTextPlugin('bundle.css'),
+    ExtractBundle,
+    ExtractFallback,
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
