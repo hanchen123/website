@@ -52,7 +52,7 @@
     "start": "webpack-dev-server --config webpack.config.dev.js",
     "lint": "./node_modules/.bin/eslint ./src",
     "watch": "webpack --watch",
-    "build": "webpack --progress --hide-modules --config webpack.config.prod.js"
+    "build": "webpack --progress --hide-modules --config webpack.config.prod.js && cp src/index.html public/index.html"
   },
   "precommit": "lint",
   "author": "Han Chen",
