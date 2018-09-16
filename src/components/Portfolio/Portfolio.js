@@ -1,4 +1,4 @@
-/* global document */
+/* global window document */
 
 import React from "react";
 import { Link } from "react-router-dom";
@@ -12,6 +12,7 @@ import styles from "./Portfolio.scss";
 class Portfolio extends React.PureComponent {
   constructor(props) {
     super(props);
+    this.scrollFunc = this.scrollFunc.bind(this);
     this.state = {
       animations: []
     };
@@ -33,10 +34,10 @@ class Portfolio extends React.PureComponent {
   }
 
   componentDidMount() {
+    window.addEventListener("scroll", this.scrollFunc);
     document.documentElement.style.height = "auto";
-    document.getElementById("mainAnchor").scrollTop = 0;
-    document.getElementById("mainAnchor").scrollIntoView();
-    partition(this.state.animations, 2).map(anims => {
+    window.scrollTo(0, window.__portfolio__scrollTop || 0);
+    partition(this.state.animations, 2, window.__portfolio__number || 0).map(anims => {
       Animated.stagger(
         400,
         anims.map(anim =>
@@ -57,6 +58,14 @@ class Portfolio extends React.PureComponent {
     }
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.scrollFunc);
+  }
+
+  scrollFunc() {
+    window.__portfolio__scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  }
+
   render() {
     const style = this.state.animations.map(anim => {
       return buildAnimation(Animated, anim.value, _.find(config, {type: anim.type}));
@@ -66,7 +75,7 @@ class Portfolio extends React.PureComponent {
       return(
         <article key={idx}>
           <Animated.div style={style[idx * 2]}>
-            <Link to={article.link} tabIndex={-1}>
+            <Link to={article.link} onClick={() => {window.__portfolio__number = idx}} tabIndex={-1}>
               <figure>
                 <svg viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg" perpetual-motion="0">
                   <defs>
@@ -85,7 +94,7 @@ class Portfolio extends React.PureComponent {
             </Link>
           </Animated.div>
           <Animated.div style={style[idx * 2 + 1]} className={styles.text}> 
-            <Link to={article.link}>
+            <Link to={article.link} onClick={() => {window.__portfolio__number = idx}}>
               <h2>{article.headline}</h2>
               <h3>{article.subHeadline}</h3>
             </Link>

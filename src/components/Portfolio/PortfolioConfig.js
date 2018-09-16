@@ -16,21 +16,21 @@ export default [{
   headline: "Samsung Wearables",
   subHeadline: "Custom configurator for purchase your Samsung Wearables",
   link: "/portfolio/wearables-configurator",
-  refs: ["slideRight17", "slideLeft16"]
+  refs: ["slideLeft17", "slideRight16"]
 }, {
   image: portfolio7,
   logo: logo1,
   headline: "Samsung Tablets",
   subHeadline: "Custom configurator for purchase your Samsung Tablets",
   link: "/portfolio/tablets-configurator",
-  refs: ["slideRight15", "slideLeft14"]
+  refs: ["slideLeft15", "slideRight14"]
 }, {
   image: portfolio6,
   logo: logo1,
   headline: "Samsung Galaxy Products",
   subHeadline: "Custom configurator for purchase your Samsung Galaxy Products",
   link: "/portfolio/galaxy-products-configurator",
-  refs: ["slideRight13", "slideLeft12"]
+  refs: ["slideLeft13", "slideRight12"]
 }, {
   image: portfolio5,
   logo: logo1,

@@ -15,12 +15,21 @@ export function collectKeys(config) {
   });
 }
 
-export function partition(config, n) {
+export function partition(config, n, number) {
   return Array.apply(null, Array(n)).map(Number.prototype.valueOf, 0).map((val, idx) => {
     let ret = [];
     let start = 0;
     while(start * n + idx < config.length) {
       ret.push(config[start++ * n + idx]);
+    }
+    if (number > 0) {
+      ret = [config[number * n + idx]];
+      let i = 1;
+      while(number - i >= 0 || number + i < config.length/2) {
+        if (number - i >= 0) ret.push(config[(number - i) * n + idx]);
+        if (number + i < config.length/2) ret.push(config[(number + i) * n + idx]);
+        i++;
+      }
     }
     return ret;
   });
