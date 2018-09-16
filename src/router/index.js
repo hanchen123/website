@@ -1,4 +1,4 @@
-/* global setTimeout */
+/* global window setTimeout */
 
 import React from "react";
 import { Route, Switch, Redirect } from "react-router";
@@ -27,6 +27,11 @@ class AnimatedRouter extends React.PureComponent {
   componentWillReceiveProps(newProps) {
     const _this = this;
     if (newProps.location.pathname !== this.props.location.pathname) {
+      // reset portfolio render sequence
+      if (newProps.location.pathname.indexOf("portfolio") < 0) {
+        window.__portfolio__number = 0;
+        window.__portfolio__scrollTop = 0;
+      }
       _this.setState({isLeaveing: true});
       setTimeout(() => {
         _this.setState({location: newProps.location, isLeaveing: false});
