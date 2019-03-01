@@ -7,10 +7,18 @@ import portfolio5 from "../../assets/portfolio5.jpg";
 import portfolio6 from "../../assets/portfolio6.jpg";
 import portfolio7 from "../../assets/portfolio7.jpg";
 import portfolio8 from "../../assets/portfolio8.jpg";
+import portfolio9 from "../../assets/portfolio9.jpg";
 import logo0 from "../../assets/logo0.png";
 import logo1 from "../../assets/logo1.png";
 
 export default [{
+  image: portfolio9,
+  logo: logo1,
+  headline: "Samsung Galaxy Products Redesign",
+  subHeadline: "Custom configurator for purchase your Samsung Galaxy Products",
+  link: "/portfolio/galaxy-products-configurator-redesign",
+  refs: ["slideLeft19", "slideRight18"]
+}, {
   image: portfolio8,
   logo: logo1,
   headline: "Samsung Wearables",
